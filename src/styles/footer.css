@@ -1,0 +1,236 @@
+/* ===========================
+   FOOTER — NihonGo!
+=========================== */
+.footer {
+  background: #1a1a1a;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.footer__accent {
+  height: 3px;
+  background: #c0392b;
+}
+
+/* Inner */
+.footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 52px 24px 36px;
+  display: flex;
+  gap: 56px;
+}
+
+/* Brand */
+.footer__brand {
+  flex: 0 0 230px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.footer__logo-kanji {
+  width: 40px;
+  height: 40px;
+  background: #c0392b;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #ffffff;
+  font-family: serif;
+  flex-shrink: 0;
+}
+
+.footer__logo-main {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.footer__logo-sub {
+  font-size: 9px;
+  color: #c0392b;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer__tagline {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.footer__hiragana {
+  font-family: serif;
+  font-size: 22px;
+  color: rgba(255, 255, 255, 0.07);
+  letter-spacing: 6px;
+  margin-bottom: 20px;
+}
+
+/* Socials */
+.footer__socials {
+  display: flex;
+  gap: 8px;
+}
+
+.footer__social {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.footer__social:hover {
+  color: #c0392b;
+  border-color: rgba(192, 57, 43, 0.5);
+  background: rgba(192, 57, 43, 0.08);
+}
+
+/* Link groups */
+.footer__groups {
+  flex: 1;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer__group-jp {
+  font-family: serif;
+  font-size: 14px;
+  color: #c0392b;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  opacity: 0.8;
+}
+
+.footer__group-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  margin-bottom: 14px;
+}
+
+.footer__group-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__link {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__link:hover {
+  color: #ffffff;
+}
+
+/* JLPT badges */
+.footer__jlpt {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer__jlpt-label {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  margin-right: 4px;
+}
+
+.footer__badge {
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 1px solid;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer__badge:hover { opacity: 0.75; }
+
+.footer__badge--n5 { color: #27ae60; border-color: rgba(39,174,96,0.4); background: rgba(39,174,96,0.08); }
+.footer__badge--n4 { color: #2980b9; border-color: rgba(41,128,185,0.4); background: rgba(41,128,185,0.08); }
+.footer__badge--n3 { color: #8e44ad; border-color: rgba(142,68,173,0.4); background: rgba(142,68,173,0.08); }
+.footer__badge--n2 { color: #e67e22; border-color: rgba(230,126,34,0.4); background: rgba(230,126,34,0.08); }
+.footer__badge--n1 { color: #c0392b; border-color: rgba(192,57,43,0.4); background: rgba(192,57,43,0.08); }
+
+/* Bottom bar */
+.footer__bottom {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.footer__copy {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.2);
+  margin: 0;
+}
+
+.footer__bottom-link {
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer__bottom-link:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer__inner {
+    flex-direction: column;
+    gap: 32px;
+    padding: 36px 20px 28px;
+  }
+
+  .footer__brand {
+    flex: none;
+  }
+
+  .footer__groups {
+    gap: 28px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
