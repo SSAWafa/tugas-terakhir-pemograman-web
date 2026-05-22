@@ -1,0 +1,498 @@
+/* ===========================
+   KANJI QUIZ — NihonGo!
+=========================== */
+.kuis-page {
+  min-height: 100vh;
+  background: #faf8f5;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+/* ── Hero ── */
+.kuis-hero {
+  position: relative;
+  background: #1a1a1a;
+  padding: 52px 24px 44px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.kuis-hero__deco {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 160px;
+  color: rgba(255,255,255,0.03);
+  pointer-events: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.kuis-hero__title {
+  position: relative;
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+}
+
+.kuis-hero__sub {
+  position: relative;
+  font-size: 14px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 0px;
+}
+
+/* ── Main Layout ── */
+.kuis-main {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Setup Form ── */
+.kuis-card {
+  background: #ffffff;
+  border: 2px solid #e8e0d5;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+  padding: 32px;
+  transition: all 0.3s ease;
+}
+
+.kuis-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+}
+
+.kuis-card__title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #faf8f5;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.kuis-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.kuis-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.kuis-form-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.5px;
+}
+
+.kuis-input-text, 
+.kuis-input-number, 
+.kuis-select {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 2px solid #e8e0d5;
+  font-size: 14px;
+  background: #fdfdfd;
+  color: #1a1a1a;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.kuis-input-text:focus, 
+.kuis-input-number:focus, 
+.kuis-select:focus {
+  border-color: #c0392b;
+  outline: none;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(192,57,43,0.06);
+}
+
+/* Radio buttons JLPT */
+.kuis-radio-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.kuis-radio-label {
+  position: relative;
+  cursor: pointer;
+  text-align: center;
+}
+
+.kuis-radio-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.kuis-radio-btn {
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #e8e0d5;
+  font-size: 14px;
+  font-weight: 700;
+  color: #555;
+  background: #fff;
+  transition: all 0.2s;
+}
+
+.kuis-radio-input:checked + .kuis-radio-btn {
+  border-color: #c0392b;
+  background: rgba(192,57,43,0.07);
+  color: #c0392b;
+}
+
+.kuis-radio-label:hover .kuis-radio-btn {
+  border-color: #c0392b;
+}
+
+/* ── Progress Bar ── */
+.kuis-progress-wrap {
+  width: 100%;
+}
+
+.kuis-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #e8e0d8;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.kuis-progress-fill {
+  height: 100%;
+  background: #c0392b;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.kuis-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #888;
+}
+
+/* ── Quiz Play Screen ── */
+.kuis-question {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 0;
+}
+
+.kuis-question__type {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888;
+  font-weight: 700;
+}
+
+.kuis-question__char {
+  font-size: 96px;
+  color: #1a1a1a;
+  line-height: 1.1;
+  font-family: 'Noto Serif JP', 'Hiragino Mincho Pro', serif;
+  background: #faf8f5;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  border: 2px solid #e8e0d5;
+  box-shadow: inset 0 4px 12px rgba(0,0,0,0.03);
+}
+
+.kuis-question__text {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+/* Options Grid */
+.kuis-options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.kuis-option-btn {
+  padding: 18px 24px;
+  border-radius: 12px;
+  border: 2px solid #e8e0d5;
+  background: #ffffff;
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.kuis-option-btn:hover:not(:disabled) {
+  border-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(192,57,43,0.06);
+  background: rgba(192,57,43,0.01);
+}
+
+.kuis-option-btn--correct {
+  border-color: #27ae60 !important;
+  background: rgba(39,174,96,0.08) !important;
+  color: #27ae60 !important;
+  font-weight: 700;
+}
+
+.kuis-option-btn--incorrect {
+  border-color: #c0392b !important;
+  background: rgba(192,57,43,0.06) !important;
+  color: #c0392b !important;
+}
+
+/* ── Feedback Banner ── */
+.kuis-feedback {
+  margin-top: 16px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.kuis-feedback--correct {
+  background: rgba(39,174,96,0.1);
+  border-left: 4px solid #27ae60;
+  color: #1e7e43;
+}
+
+.kuis-feedback--incorrect {
+  background: rgba(192,57,43,0.08);
+  border-left: 4px solid #c0392b;
+  color: #922b21;
+}
+
+.kuis-feedback__title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.kuis-feedback__desc {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* ── Actions ── */
+.kuis-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.kuis-btn {
+  padding: 13px 32px;
+  border-radius: 10px;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.kuis-btn--primary {
+  background: #c0392b;
+  color: #fff;
+}
+
+.kuis-btn--primary:hover {
+  background: #a93226;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(192,57,43,0.2);
+}
+
+.kuis-btn--secondary {
+  background: rgba(192,57,43,0.08);
+  color: #c0392b;
+  border: 2px solid rgba(192,57,43,0.25);
+  box-shadow: none;
+}
+
+.kuis-btn--secondary:hover {
+  background: rgba(192,57,43,0.15);
+}
+
+/* ── Done Screen ── */
+.kuis-done {
+  text-align: center;
+  padding: 12px 0;
+  animation: fadeIn 0.4s ease;
+}
+
+.kuis-done__emoji {
+  font-size: 64px;
+  margin-bottom: 12px;
+}
+
+.kuis-done h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+}
+
+.kuis-done__sub {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.kuis-done__score-box {
+  background: #faf8f5;
+  border: 2px dashed #e8e0d5;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 28px;
+  display: inline-block;
+  min-width: 200px;
+}
+
+.kuis-done__score-val {
+  font-size: 54px;
+  font-weight: 700;
+  color: #c0392b;
+  line-height: 1;
+}
+
+.kuis-done__score-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #888;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.kuis-done__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.kuis-done__stat {
+  padding: 14px;
+  border-radius: 12px;
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kuis-done__stat-val {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.kuis-done__stat-label {
+  font-size: 11px;
+  color: #888;
+  font-weight: 600;
+}
+
+.kuis-done__stat--correct { color: #27ae60; background: rgba(39,174,96,0.03); border-color: rgba(39,174,96,0.1); }
+.kuis-done__stat--incorrect { color: #c0392b; background: rgba(192,57,43,0.03); border-color: rgba(192,57,43,0.1); }
+
+.kuis-done__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ── Status and Spinner ── */
+.kuis-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 64px 0;
+  color: #888;
+  font-size: 14px;
+  text-align: center;
+}
+
+.kuis-spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e8e0d8;
+  border-top-color: #c0392b;
+  border-radius: 50%;
+  animation: kuis-spin 0.7s linear infinite;
+}
+
+@keyframes kuis-spin { to { transform: rotate(360deg); } }
+
+.kuis-error {
+  color: #c0392b;
+  background: rgba(192,57,43,0.06);
+  border: 1px solid rgba(192,57,43,0.15);
+  border-radius: 10px;
+  padding: 16px;
+  font-size: 14px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .kuis-radio-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .kuis-options-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .kuis-card {
+    padding: 20px;
+  }
+  
+  .kuis-done__stats {
+    grid-template-columns: 1fr;
+  }
+}
