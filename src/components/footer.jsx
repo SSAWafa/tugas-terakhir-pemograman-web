@@ -9,8 +9,8 @@ const footerLinks = {
       { to: "/hiragana",   label: "Hiragana" },
       { to: "/katakana",   label: "Katakana" },
       { to: "/kanji",      label: "Daftar Kanji" },
-      { to: "/percakapan", label: "Percakapan" },
-      { to: "/tatabahasa", label: "Tata Bahasa" },
+      { to: "/tata-bahasa", label: "Grammar" },
+      { to: "/partikel", label: "Partikel" },
     ],
   },
   latihan: {
@@ -21,19 +21,26 @@ const footerLinks = {
       { to: "/flashcard",  label: "Flash Card" },
     ],
   },
+  // --- BAGIAN BLOG BARU DI SINI ---
+  blog: {
+    jp: "ブログ",
+    label: "Blog",
+    links: [
+      { to: "/benefit", label: "Keuntungan" },
+      { to: "/buku",   label: "Buku Belajar" },
+      { to: "/platform", label: "Platform belajar" },
+      { to: "/budaya", label: "Budaya Jepang" },
+    ],
+  },
+  // --------------------------------
   info: {
     jp: "じょうほう",
     label: "Info",
     links: [
       { to: "/about",   label: "Tentang Kami" },
-      { to: "/blog",    label: "Blog" },
-      { to: "/faq",     label: "FAQ" },
-      { to: "/contact", label: "Hubungi Kami" },
     ],
   },
 };
-
-const jlptLevels = ["N5", "N4", "N3", "N2", "N1"];
 
 export default function Footer() {
   return (
@@ -79,20 +86,6 @@ export default function Footer() {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* JLPT badges */}
-      <div className="footer__jlpt">
-        <span className="footer__jlpt-label">Level JLPT:</span>
-        {jlptLevels.map((lvl) => (
-          <Link
-            key={lvl}
-            to={`/jlpt/${lvl.toLowerCase()}`}
-            className={`footer__badge footer__badge--${lvl.toLowerCase()}`}
-          >
-            {lvl}
-          </Link>
-        ))}
       </div>
 
       {/* Bottom bar */}

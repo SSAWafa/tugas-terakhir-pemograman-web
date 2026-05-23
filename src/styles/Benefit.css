@@ -1,0 +1,182 @@
+/* ============================================================
+   BENEFIT PAGE STYLES (Cocok untuk Tugas UTS)
+   ============================================================ */
+
+.benefit-page {
+  background-color: #ffffff;
+  color: #2c3e50;
+  font-family: 'Trebuchet MS', sans-serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Banner */
+.benefit-hero {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+  color: #ffffff;
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.benefit-hero__container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.benefit__tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.1);
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+}
+
+.benefit__main-title {
+  font-family: serif;
+  font-size: 40px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.benefit__title-highlight {
+  color: #c0392b;
+}
+
+.benefit__meta {
+  font-size: 13px;
+  color: #888888;
+}
+
+/* Layout Konten Berita/Blog */
+.benefit-content__wrapper {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 50px 24px 100px;
+}
+
+/* Gambar Utama */
+.benefit__featured-image-wrapper {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
+}
+
+.benefit__featured-image {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Teks Intro */
+.benefit__intro-text p {
+  font-size: 17px;
+  color: #4a5568;
+  margin-bottom: 25px;
+}
+
+/* Judul Sub-Section */
+.benefit__section-title {
+  font-family: serif;
+  font-size: 28px;
+  color: #1a1a1a;
+  margin: 50px 0 30px;
+  border-left: 5px solid #c0392b;
+  padding-left: 15px;
+}
+
+/* List Susunan Manfaat Berjejer Rapi ke Bawah */
+.benefit__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.benefit__card {
+  display: flex;
+  gap: 25px;
+  background: #fdfdfd;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.benefit__card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  border-color: rgba(192, 57, 43, 0.2);
+}
+
+.benefit__card-number {
+  font-size: 32px;
+  font-weight: 800;
+  color: #c0392b;
+  font-family: serif;
+  line-height: 1;
+}
+
+.benefit__card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.benefit__card-desc {
+  font-size: 15px;
+  color: #4a5568;
+  text-align: justify;
+}
+
+/* Kotak Kesimpulan */
+.benefit__summary-box {
+  background-color: #fff5f5;
+  border-radius: 12px;
+  padding: 35px;
+  margin-top: 60px;
+  border: 1px dashed #c0392b;
+}
+
+.benefit__summary-box h3 {
+  font-size: 22px;
+  color: #c0392b;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.benefit__summary-box p {
+  font-size: 15px;
+  color: #2d3748;
+  margin: 0;
+}
+
+/* Kepatuhan Responsif (Bisa dibuka di Handphone dengan rapi) */
+@media (max-width: 768px) {
+  .benefit__main-title {
+    font-size: 28px;
+  }
+  
+  .benefit__featured-image {
+    height: 250px;
+  }
+
+  .benefit__card {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .benefit__section-title {
+    font-size: 22px;
+  }
+}

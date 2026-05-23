@@ -1,0 +1,373 @@
+/* ===========================
+    HOME — Hero Section
+=========================== */
+.home-hero {
+  background: #ffffff;
+  font-family: 'Trebuchet MS', sans-serif;
+  overflow: hidden; /* Mencegah scroll horizontal akibat teks besar */
+  position: relative; /* Dasar untuk elemen absolute di dalamnya */
+  min-height: 80vh;   /* Memberikan ruang yang cukup */
+  display: flex;
+  align-items: center;
+}
+
+/* Container utama */
+.hero__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 56px;
+  width: 100%;
+  
+  /* KUNCI: Agar teks dekorasi patokan ke sini, bukan ke layar browser */
+  position: relative; 
+  z-index: 2;
+}
+
+/* Kolom Teks */
+.hero__content {
+  flex: 1;
+  max-width: 540px;
+  position: relative;
+  z-index: 3; /* Supaya teks utama di atas dekorasi */
+}
+
+.hero__badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #c0392b;
+  background: rgba(192, 57, 43, 0.08);
+  border: 1px solid rgba(192, 57, 43, 0.2);
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 24px;
+}
+
+.hero__title {
+  font-family: serif;
+  font-size: 56px;
+  line-height: 1.1;
+  color: #000000;
+  margin-bottom: 24px;
+}
+
+.hero__title-accent {
+  color: #ff1900;
+  position: relative;
+}
+
+.hero__description {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.45);
+  line-height: 1.8;
+  margin-bottom: 36px;
+}
+
+/* Tombol */
+.hero__actions {
+  display: flex;
+  gap: 12px;
+}
+
+.hero__btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero__btn--primary {
+  background: #c0392b;
+  color: #ffffff;
+}
+
+.hero__btn--primary:hover {
+  background: #a33125;
+}
+
+.hero__btn--secondary {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.hero__btn--secondary:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Kolom Visual */
+.hero__visual {
+  flex: 0 0 420px;
+  position: relative;
+  z-index: 3;
+}
+
+.hero__card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  aspect-ratio: 4/5;
+}
+
+.hero__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 70%);
+}
+
+.hero__card-content {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+}
+
+/* ============================================================
+   DEKORASI BACKGROUND (日本語)
+   Sudah diperbaiki posisinya ke Tengah & Warna Merah
+   ============================================================ */
+.hero__bg-text {
+  position: absolute;
+  
+  /* Setting ke Tengah */
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%);
+  
+  font-family: serif;
+  font-size: 280px; /* Diperbesar agar sesuai desain awal */
+  font-weight: 900;
+  
+  /* Warna Merah */
+  color: #c0392b;
+  opacity: 0.1; /* Transparansi agar teks depan tetap terbaca */
+  
+  pointer-events: none;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .hero__inner {
+    flex-direction: column;
+    padding: 60px 24px;
+    text-align: center;
+  }
+  .hero__content {
+    max-width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero__visual {
+    flex: none;
+    width: 100%;
+    max-width: 360px;
+  }
+  .hero__bg-text {
+    font-size: 120px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.05;
+  }
+}
+html {
+  scroll-behavior: smooth; /* Membuat efek transisi scroll halus saat tombol diklik */
+}
+
+.home-features {
+  padding: 80px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.features__header {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.features__title {
+  font-family: serif;
+  font-size: 36px;
+  color: #000000;
+}
+
+.features__subtitle {
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* Container Tab Menu */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 48px;
+  flex-wrap: wrap; /* Agar responsif di layar HP */
+}
+
+/* Tombol Tab */
+.tab-btn {
+  padding: 10px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  background: #ffffff;
+  color: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: rgba(0, 0, 0, 0.03);
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Keadaan Tombol Saat Aktif/Diklik */
+.tab-btn--active {
+  background: #c0392b;
+  color: #ffffff;
+  border-color: #c0392b;
+}
+
+.tab-btn--active:hover {
+  background: #a33125;
+  color: #ffffff;
+  border-color: #a33125;
+}
+
+/* Layout Grid Kartu */
+.features__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+
+/* Desain Kartu Konten */
+.feature-card {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  padding: 28px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card__title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #111111;
+  font-weight: 700;
+}
+
+.feature-card__desc {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.55);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.feature-card__link {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #c0392b;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.feature-card__link:hover {
+  color: #a33125;
+}
+/* ROADMAP / RUTE */
+.home-roadmap {
+  padding: 80px 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.roadmap__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.roadmap__item {
+  display: flex;
+  gap: 20px;
+}
+
+.roadmap__circle {
+  width: 40px;
+  height: 40px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.is-done .roadmap__circle {
+  background: #c0392b;
+  color: white;
+}
+
+.roadmap__card {
+  flex-grow: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #eee;
+}
+
+.roadmap__card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.roadmap__card-header input {
+  width: 20px;
+  height: 20px;
+  accent-color: #c0392b;
+  cursor: pointer;
+}
+
+.roadmap__link {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 13px;
+  color: #c0392b;
+  font-weight: bold;
+  text-decoration: none;
+}

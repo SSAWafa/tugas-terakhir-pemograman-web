@@ -3,6 +3,7 @@ import Navbar from "./components/navbar.jsx";
 import Footer from "./components/footer.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
+import Benefit from "./pages/Benefit.jsx";
 import Kanji from "./pages/Kanji.jsx";
 import Flashcard from "./pages/Flashcard.jsx";
 import Kuis from "./pages/Kuis.jsx";
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/kanji" element={<Kanji />} />
           <Route path="/flashcard" element={<Flashcard />} />
           <Route path="/kuis" element={<Kuis />} />
+          <Route path="/benefit" element={<Benefit />} />
         </Routes>
       </main>
       <Footer />

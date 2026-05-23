@@ -3,11 +3,13 @@ import { Link, NavLink } from "react-router-dom";
 import "../styles/navbar.css";
 
 const navLinks = [
-  { to: "/",          label: "Mulai Belajar", jp: "はじめる" },
-  { to: "/kosakata",  label: "Kosakata",      jp: "単語"     },
-  { to: "/tatabahasa",label: "Tata Bahasa",   jp: "文法"     },
-  { to: "/latihan",   label: "Latihan",       jp: "練習"     },
-  { to: "/jlpt",      label: "JLPT",          jp: "試験"     },
+  { to: "/", label: "Mulai Belajar"},
+  { to: "/hiragana", label: "Hiragana"},
+  { to: "/katakana", label: "Katakana"},
+  { to: "/kanji", label: "Daftar Kanji"},
+  { to: "/kuis", label: "Kuis Kanji"},
+  { to: "/flashcard", label: "Flashcard Kanji"},
+  { to: "/about", label: "About Us"},
 ];
 
 export default function Navbar() {
